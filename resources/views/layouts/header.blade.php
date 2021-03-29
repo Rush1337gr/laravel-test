@@ -12,7 +12,7 @@
 <div class="main-container">
     <div class="block">
         <div class="heading-title">
-            <h1><a href="{{route('/')}}">rush<span>sense</span></a></h1>
+            <h1><a href="{{route('/')}}">name<span>site</span></a></h1>
         </div>
         <div class="block-menu">
             <ul>
