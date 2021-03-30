@@ -10,12 +10,13 @@
             <h1>authorization</h1>
         </div>
         <div class="block-main">
-            <form action="#" method="post">
+            <form action="{{route('authorization-form')}}" method="post">
+                @csrf
                 <p>nickname:</p>
                 <input type="text" name="nickname">
                 <p>password:</p>
                 <input type="password" name="password">
-                <div class="alert-error"><p>message</p></div>
+                @include('layouts.alert')
                 <p><input type="submit"></p>
             </form>
         </div>

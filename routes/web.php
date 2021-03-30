@@ -20,3 +20,9 @@ Route::get('/profile', function () {return view('profile');})->name('profile');
 Route::get('/registration', function () {return view('registration');})->name('registration');
 
 Route::get('/authorization', function () {return view('authorization');})->name('authorization');
+
+Route::post('/registration','Auth\UserController@create')->name('registration-form');
+
+Route::post('/authorization', 'Auth\UserController@login')->name('authorization-form');
+
+Route::get('/profile/logout',function () {Auth::logout();return redirect('authorization');})->name('logout');

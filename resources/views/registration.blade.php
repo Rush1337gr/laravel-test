@@ -10,7 +10,8 @@
             <h1>registration</h1>
         </div>
         <div class="block-main">
-            <form action="#" method="post">
+            <form action="{{route('registration-form')}}" method="post">
+                @csrf
                 <p>come up with a nickname:</p>
                 <input type="text" name="nickname">
                 <p>specify email:</p>
@@ -18,8 +19,8 @@
                 <p>come up with a password:</p>
                 <input type="password" name="password">
                 <p>Repeat password:</p>
-                <input type="password" name="password">
-                <div class="alert-error"><p>message</p></div>
+                <input type="password" name="password-confirmation">
+                @include('layouts.alert')
                 <p><input type="submit"></p>
             </form>
         </div>
