@@ -33,6 +33,8 @@ class AuthorizationRequest extends FormRequest
     {
         return [
             'required' => 'поле :attribute обязательно к заполнению',
+            'max' => 'Максимальная длина поля :attribute должна быть не более :max символов',
+            'min' => 'Минимальная длина поля :attribute должна быть не более :min символов',
         ];
     }
 }

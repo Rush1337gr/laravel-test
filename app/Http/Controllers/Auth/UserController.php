@@ -6,6 +6,8 @@ use App\Http\Models\User;
 use App\Http\Requests\AuthorizationRequest;
 use App\Http\Requests\RegistersRequest;
 use App\Http\Controllers\Controller;
+
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -26,7 +28,7 @@ class UserController extends Controller
         }
 
         return redirect(route('registration'))->withErrors([
-            'formError' => 'ппроизошла ошибка при сохранение пользователя'
+            'registration-error' => 'ппроизошла ошибка при сохранение пользователя'
         ]);
     }
 
@@ -43,7 +45,7 @@ class UserController extends Controller
         return redirect(route('authorization'))->withErrors(['nickname'=>'не удалось авторизоваться']);
     }
 
-    public function checkAuth(){
+    private function checkAuth(){
         if(Auth::check()) {
             return redirect(route('home'));
         }
