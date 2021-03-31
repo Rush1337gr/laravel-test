@@ -21,6 +21,7 @@ class UserController extends Controller
         $user->nickname = $validateData['nickname'];
         $user->email = $validateData['email'];
         $user->password = $validateData['password'];
+        $user->status = 'user';
 
         if($user) {
             $user->save();
@@ -43,6 +44,15 @@ class UserController extends Controller
         }
 
         return redirect(route('authorization'))->withErrors(['nickname'=>'не удалось авторизоваться']);
+    }
+
+    public function save() {
+        return 0;
+    }
+
+    public function getUser($id) {
+        $user = new User();
+        return view('profile.id', ['user' => $user->find($id)] );
     }
 
     private function checkAuth(){

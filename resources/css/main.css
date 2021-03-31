@@ -105,3 +105,18 @@ h1, h2, h3, h4,h5, a, p{
 #box-welcome h1{
     font-size: 26px;
 }
+.block-main-header {
+    text-align: left;
+}
+.block-line {
+    display: inline-block;
+    vertical-align:top;
+}
+.block-line h2 {
+    margin:5px;
+}
+.block-main-header img {
+    width: 250px;
+    height: 300px;
+    border-radius: 6px;
+}

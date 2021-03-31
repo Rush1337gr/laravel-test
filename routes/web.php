@@ -21,7 +21,13 @@ Route::get('/registration', function () {return view('registration');})->name('r
 
 Route::get('/authorization', function () {return view('authorization');})->name('authorization');
 
+Route::get('/profile/edit', function () {return view('edit');})->name('edit');
+
 Route::get('/profile/logout',function () {Auth::logout();return redirect('authorization');})->name('logout');
+
+Route::post('/profile/edit','Auth\UserController@save')->name('edit-form');
+
+Route::get('/profile/id={id}','Auth\UserController@getUser')->name('getUser');
 
 Route::post('/registration','Auth\UserController@create')->name('registration-form');
 
